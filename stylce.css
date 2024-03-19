@@ -1,36 +1,141 @@
 body {
+    z-index: 1;
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    background-color: #c0bdbd;
     margin: 0;
     padding: 0;
 }
 
 .navbar {
-    background-color: black;
-    width: 100%;
-    height: 90px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
 }
 
-.logo {
-    width: 150px;
+.imageNavbar {
+    width: 120px;
     height: 80px;
-    margin-left: 50px;
+    margin-left: 150px;
 }
 
-.title {
-    text-align: right;
-    margin-top: -50px;
-    
+@media (max-width: 800px) { 
+    .imageNavbar {
+        width: 80px;
+        height: 40px;
+        margin-left: 30px;
+    }
 }
 
-a:hover {
-    border-bottom: 3px solid;
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+}
+
+.navbar-links li a:hover {
+    background-color: #ffffff;
     color: #a8b326;
 }
 
-a {
-    text-decoration: none;
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+.herobanner {
+    z-index: -10;
+    position: relative;
+    width: 100%;
+    height: 700px;
+}
+
+@media (max-width: 800px) { 
+    .herobanner {
+        height: 400px;
+    }
+}
+
+.conteneur {
+    width: 100%;
+    text-align: center;
+    margin-top: -550px;
+}
+
+.titrePageAccueil {
+    background-color: black;
     color: white;
-    font-size: 25px;
-    margin-right: 20px;
+    display: inline-block;
+    padding: 10px;
+}
+
+@media (max-width: 800px) { 
+    .conteneur {
+        margin-top: -300px;
+    }
+    .titrePageAccueil {
+        padding: 5px;
+    }
 }
